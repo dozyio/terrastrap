@@ -1,0 +1,7 @@
+env                         = "prod"
+aws_account_id              = "123456789012"
+aws_profile                 = "production"
+aws_region                  = "eu-west-2"
+infrastructure_name         = "dozyio"     #alphanumeric, no space, no symbols, lowercase
+tf_state_s3_bucket          = "tf-state"   #automatically prepends env, infrastructure name and region
+tf_lock_dynamodb_table_name = "tf-lock"    #automatically prepends env, infrastructure name and region
