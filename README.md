@@ -27,6 +27,8 @@ ENV=stage make bootstrap
 ENV=prod make bootstrap
 ```
 
+[![asciicast](https://asciinema.org/a/iftOoUzopjVCxVb7cvNDExmlX.svg)](https://asciinema.org/a/iftOoUzopjVCxVb7cvNDExmlX?autoplay=1)
+
 ## Using S3 Backend in Terraform
 Once the backend has been created, the Terraform outputs will show the S3 bucket
 and DyanmoDB table that you can use in your infrastructure.
