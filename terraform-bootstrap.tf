@@ -13,12 +13,12 @@ module "bootstrap" {
   source                      = "../modules/bootstrap"
   tf_state_s3_bucket          = var.tf_state_s3_bucket
   tf_lock_dynamodb_table_name = var.tf_lock_dynamodb_table_name
-  infrastructure_name         = var.infrastructure_name
+  namespace                   = var.namespace
 }
 
-output "bucket_id" {
+output "bucket" {
   value = module.bootstrap.aws_s3_bucket_state_bucket_id
 }
-output "table_id" {
+output "dynamodb_table" {
   value = module.bootstrap.aws_dynamodb_table_id
 }

@@ -13,8 +13,8 @@ variable "aws_region" {
   type        = string
 }
 
-variable "infrastructure_name" {
-  description = "Infrastructure name - lowercase, no symbols, no spaces"
+variable "namespace" {
+  description = "Namespace for your infrastructure - lowercase, no symbols, no spaces"
   type        = string
 }
 

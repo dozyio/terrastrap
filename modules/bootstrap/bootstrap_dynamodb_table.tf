@@ -1,7 +1,7 @@
 # Module to build the Terraform DynamoDB bootstrap for remote state lock
 
 resource "aws_dynamodb_table" "tf_lock_state" {
-  name = "${var.env}-${var.infrastructure_name}-${var.aws_region}-${var.tf_lock_dynamodb_table_name}"
+  name = "${var.env}-${var.namespace}-${var.aws_region}-${var.tf_lock_dynamodb_table_name}"
 
   billing_mode = "PAY_PER_REQUEST"
 

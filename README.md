@@ -35,11 +35,11 @@ and DyanmoDB table that you can use in your infrastructure.
 ```
 Outputs:
 
-bucket_id = "dev-dozyio-eu-west-2-tf-state"
-table_id = "dev-dozyio-eu-west-2-tf-lock"
+bucket = "dev-dozyio-eu-west-2-tf-state"
+dynamodb_table = "dev-dozyio-eu-west-2-tf-lock"
 ```
 
-These outputs can then be used as follows within you Terraform files
+These outputs can then be used as follows within your Terraform files
 ```
 terraform {
   required_version = "0.14.7"

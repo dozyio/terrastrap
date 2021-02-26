@@ -1,7 +1,7 @@
 # Module to build the Terraform S3 bootstrap for storing remote state
 
 resource "aws_s3_bucket" "state_bucket" {
-  bucket = "${var.env}-${var.infrastructure_name}-${var.aws_region}-${var.tf_state_s3_bucket}"
+  bucket = "${var.env}-${var.namespace}-${var.aws_region}-${var.tf_state_s3_bucket}"
 
   server_side_encryption_configuration {
     rule {
