@@ -92,7 +92,7 @@ lifecycle.prevent_destroy or reduce the scope of the plan using the -target
 flag.
 ```
 
-This error is intended as a failsafe incase Terraform tries to be deleted the
+This error is intended as a failsafe incase Terraform tries to delete the
 bucket. To delete the bootstrap bucket, change the following
 modules/bootstrap/bootstrap_s3_bucket.tf
 
@@ -119,9 +119,11 @@ ENV=dev make bootstrap-plan
 
 ## Changing Terraform Versions
 
-The Makefile checks the Terraform version. At time of writing this is pegged
-to version 0.14.7. To update, edit the Makefile and update the
-TERRAFORM_VERSION and md5 hash.
+Terrastrap has support for TFENV in as much as it checks for the TFENV binary.
+
+If you're not using TFENV, the Makefile checks your version of Terraform. At
+time of writing this is pegged to version 0.14.7. To update, edit the Makefile
+and update the TERRAFORM_VERSION and md5 hash.
 
 ```
 TERRAFORM:= $(shell command -v terraform 2> /dev/null)

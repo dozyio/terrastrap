@@ -13,6 +13,9 @@ else
 	SHELL := /bin/bash
 endif
 
+TFENV:= $(shell command -v tfenv 2> /dev/null)
+
+#if not using TFENV (https://github.com/tfutils/tfenv), peg Terraform to a specific version
 TERRAFORM:= $(shell command -v terraform 2> /dev/null)
 TERRAFORM_VERSION:= "0.14.7"
 
@@ -40,7 +43,9 @@ default:
 	@echo ""
 
 check:
+ifndef TFENV
 	@if [ "${TERRAFORM_MD5}" != "${TERRAFORM_REQUIRED_MD5}" ]; then echo "Please ensure you are running terraform ${TERRAFORM_VERSION}."; exit 1; fi;
+endif
 
 bootstrap-plan: check sedreplace
 	@echo "Creating terraform plan for a bootstrapped [$(value ENV)] environment"
